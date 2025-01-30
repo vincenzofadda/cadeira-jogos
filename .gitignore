@@ -1,0 +1,14 @@
+# Unity
+# Ignore the following Unity-generated files
+Temp/
+Library/
+obj/
+Build/
+BuildSettings/
+.vs/
+.idea/
+.userprefs
+
+# User-specific files
+.DS_Store
+Thumbs.db
