@@ -13,8 +13,7 @@ public class PlayerController : MonoBehaviour
       rig.linearVelocity = Vector2.right;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         float moveX = 0f;
         float moveY = 0f;
@@ -36,6 +35,6 @@ public class PlayerController : MonoBehaviour
             moveY = -speed;
         }
 
-        rig.linearVelocity = new Vector2(moveX, moveY); // Aplica a velocidade ao Rigidbody2D
+        rig.linearVelocity = new Vector2(moveX, moveY);
     }
 }
