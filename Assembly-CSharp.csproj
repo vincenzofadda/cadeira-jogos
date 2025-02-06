@@ -59,7 +59,6 @@
     <UnityVersion>6000.0.36f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\VINCENZO\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.5\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -85,6 +84,7 @@
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JValueNullException.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\PlayerController.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JValueTypeException.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Attributes\ExcludeFromJSONSerializeAttribute.cs" />
     <Compile Include="Assets\Tabsil\Mineral\Scripts\Data\MineralPrefs.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JArrayIndexOutOfRangeException.cs" />
@@ -107,6 +107,7 @@
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JArgumentNullException.cs" />
     <Compile Include="Assets\TotalJSON\Internal\DebugLogger.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Attributes\IncludeToJSONSerializeAttribute.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Player.cs" />
     <Compile Include="Assets\Tabsil\Scripts\Utilities\VectorUtilities.cs" />
     <Compile Include="Assets\TotalJSON\Internal\JSONRuntimeDebugContainer.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JNumberFormatException.cs" />
@@ -603,14 +604,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
