@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [Header("Spawn Sequence Related")]
     [SerializeField] private SpriteRenderer renderer;
     [SerializeField] private SpriteRenderer spawnIndicator;
+    private bool hasSpawned;
     
     [Header("Settings")]
     [SerializeField] private float moveSpeed;
@@ -31,13 +32,27 @@ public class EnemyMovement : MonoBehaviour
 
         renderer.enabled = false;
         spawnIndicator.enabled =  true;
+        Vector3 targetScale = spawnIndicator.transform.localScale * 1.2f;
+        LeanTween.scale(spawnIndicator.gameObject, targetScale, .3f).setLoopPingPong(4).setOnComplete(SpawnSequenceCompleted);
     }
 
     // Update is called once per frame
     void Update()
     {
-       FollowPlayer();
-       TryAttack();
+
+        if(!hasSpawned)
+            return;
+        FollowPlayer();
+        TryAttack();
+        
+    }
+
+    private void SpawnSequenceCompleted()
+    {
+        renderer.enabled = true;
+        spawnIndicator.enabled =  false;
+
+        hasSpawned = true;
     }
 
     private void FollowPlayer()

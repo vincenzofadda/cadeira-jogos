@@ -67,6 +67,7 @@
     <Compile Include="Assets\Tabsil\Mineral\Scripts\Editor\IconFoldersEditor.cs" />
     <Compile Include="Assets\Tabsil\Mineral\Scripts\Editor\ColoredFoldersEditor.cs" />
     <Compile Include="Assets\Tabsil\Mineral\Scripts\Editor\MineralEditor.cs" />
+    <Compile Include="Assets\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
     <Compile Include="Assets\TotalJSON\Internal\Editor\JSONValidator.cs" />
     <Compile Include="Assets\TotalJSON\Internal\Editor\JSONRuntimeDebug.cs" />
     <Compile Include="Assets\Tabsil\Mineral\Scripts\Editor\MenuItems.cs" />
