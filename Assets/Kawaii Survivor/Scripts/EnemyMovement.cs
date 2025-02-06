@@ -17,6 +17,12 @@ public class EnemyMovement : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private ParticleSystem deathParticles;
 
+    [Header("Attack")]
+    [SerializeField] private int damage;
+    [SerializeField] private float attackFrequency;
+    private float attackDelay;
+    private float attackTimer;
+
     [Header("DEBUG")]
     [SerializeField] private bool gizmos;
 
@@ -34,6 +40,8 @@ public class EnemyMovement : MonoBehaviour
         spawnIndicator.enabled =  true;
         Vector3 targetScale = spawnIndicator.transform.localScale * 1.2f;
         LeanTween.scale(spawnIndicator.gameObject, targetScale, .3f).setLoopPingPong(4).setOnComplete(SpawnSequenceCompleted);
+
+        attackDelay = 1f / attackFrequency;
     }
 
     // Update is called once per frame
@@ -43,7 +51,15 @@ public class EnemyMovement : MonoBehaviour
         if(!hasSpawned)
             return;
         FollowPlayer();
-        TryAttack();
+
+        if(attackTimer >= attackDelay)
+        {
+            TryAttack();
+        }   
+        else
+        {
+            Wait();
+        }        
         
     }
 
@@ -70,9 +86,20 @@ public class EnemyMovement : MonoBehaviour
 
         if(distanceToPlayer <= playerDetectionRadius)
         {
-            Death();
+            Attack();
             
         }
+    }
+
+    private void Wait()
+    {
+        attackTimer += Time.deltaTime; 
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Jogador tomou " + damage + " de dano!");
+        attackTimer = 0;
     }
 
     private void Death()
