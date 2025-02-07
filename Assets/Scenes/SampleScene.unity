@@ -7239,6 +7239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1397326559}
+  - component: {fileID: 1397326561}
   - component: {fileID: 1397326560}
   m_Layer: 0
   m_Name: Enemy
@@ -7277,11 +7278,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857d09ad52f16274b8d418a161c9f700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+--- !u!114 &1397326561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397326558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff204279805a0f41b88443459af494d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   renderer: {fileID: 1091971734}
   spawnIndicator: {fileID: 1569217784}
-  moveSpeed: 3
-  playerDetectionRadius: 0.6
   deathParticles: {fileID: 779638138}
+  damage: 1
+  attackFrequency: 1
+  playerDetectionRadius: 0.5
   gizmos: 0
 --- !u!1 &1490705823
 GameObject:

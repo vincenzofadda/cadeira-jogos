@@ -150,6 +150,7 @@
     <Compile Include="Assets\LeanTween\Testing\TestingColorTweening.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JNumberFormatException.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Enemy.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing243.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\CameraController.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\DeserializeException.cs" />
