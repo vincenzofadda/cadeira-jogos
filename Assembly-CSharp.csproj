@@ -59,6 +59,7 @@
     <UnityVersion>6000.0.36f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Users\david\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.5\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -154,6 +155,7 @@
     <Compile Include="Assets\LeanTween\Testing\Testing243.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\CameraController.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\DeserializeException.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\WaveManager.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
     <Compile Include="Assets\Tabsil\Scripts\Utilities\MenuItems.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\ParseException.cs" />
@@ -1409,6 +1411,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NaughtyAttributes.Test.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Core.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Editor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>
