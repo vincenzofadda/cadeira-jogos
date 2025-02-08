@@ -45,7 +45,7 @@ public class WaveManager : MonoBehaviour
 
   private void ManageCurrentWave()
   {
-    Wave currentWave = waves[0];
+    Wave currentWave = waves[currentWaveIndex];
     for (int i = 0; i < currentWave.segments.Count; i++)
     {
       WaveSegment segment = currentWave.segments[i];
