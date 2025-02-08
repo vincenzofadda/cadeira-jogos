@@ -1378,6 +1378,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Test.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Core.csproj" />
+    <ProjectReference Include="NaughtyAttributes.Editor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

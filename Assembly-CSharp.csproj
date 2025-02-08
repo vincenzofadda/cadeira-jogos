@@ -97,6 +97,7 @@
     <Compile Include="Assets\LeanTween\Testing\TestingIssue2.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\PlayerController.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JValueTypeException.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\TransformExtension.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\EnemyMovement.cs" />

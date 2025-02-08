@@ -75,8 +75,14 @@ public class WaveManager : MonoBehaviour
 
   private void StartWaveTransition()
   {
+    DefeatAllEnemies();
     currentWaveIndex++;
     StartWave(currentWaveIndex);
+  }
+
+  private void DefeatAllEnemies()
+  {
+    transform.Clear();
   }
 
   private Vector2 GetSpawnPosition()
