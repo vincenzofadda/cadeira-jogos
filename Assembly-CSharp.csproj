@@ -65,7 +65,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Kawaii Survivor\Scripts\GameManager.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingDescr.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JSON.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="Assets\Tabsil\Sijil\Scripts\Core\GameData.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Settings\ParseStringSettings.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\UnknownObjectTypeException.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\ProtectedException.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
@@ -95,12 +95,9 @@
     <Compile Include="Assets\LeanTween\Testing\FollowingTests.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingIssue2.cs" />
-    <Compile Include="Assets\Kawaii Survivor\Scripts\PlayerController.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JValueTypeException.cs" />
-    <Compile Include="Assets\Kawaii Survivor\Scripts\TransformExtension.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Kawaii Survivor\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingRotate.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Attributes\ExcludeFromJSONSerializeAttribute.cs" />
     <Compile Include="Assets\Tabsil\Mineral\Scripts\Data\MineralPrefs.cs" />
@@ -111,7 +108,9 @@
     <Compile Include="Assets\TotalJSON\Scripts\Settings\SerializeSettings.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JNumber.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JString.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Settings\DeserializeSettings.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
     <Compile Include="Assets\TotalJSON\Examples\CreateAndModifyJSON.cs" />
@@ -122,6 +121,7 @@
     <Compile Include="Assets\TotalJSON\Examples\ExampleSerializeObjects\ExamplePlayerObject.cs" />
     <Compile Include="Assets\Tabsil\Scripts\Utilities\ImageUtilities.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JBoolean.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Managers\WaveManager.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JArgumentException.cs" />
     <Compile Include="Assets\TotalJSON\Examples\SaveAndLoadFile.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
@@ -133,6 +133,7 @@
     <Compile Include="Assets\TotalJSON\Internal\CreateStringRunner.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JValue.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JArray.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
     <Compile Include="Assets\TotalJSON\Examples\SerializeAndDeserialize.cs" />
@@ -142,21 +143,20 @@
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\TotalJSON\Internal\DebugLogger.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingIssue.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Player\PlayerHealthUI.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Attributes\IncludeToJSONSerializeAttribute.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingOptionalCancel.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
-    <Compile Include="Assets\Kawaii Survivor\Scripts\Player.cs" />
     <Compile Include="Assets\Tabsil\Scripts\Utilities\VectorUtilities.cs" />
     <Compile Include="Assets\TotalJSON\Internal\JSONRuntimeDebugContainer.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing248.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Player\Player.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingColorTweening.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JNumberFormatException.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
-    <Compile Include="Assets\Kawaii Survivor\Scripts\Enemy.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing243.cs" />
-    <Compile Include="Assets\Kawaii Survivor\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Managers\CameraController.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\DeserializeException.cs" />
-    <Compile Include="Assets\Kawaii Survivor\Scripts\WaveManager.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
     <Compile Include="Assets\Tabsil\Scripts\Utilities\MenuItems.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\ParseException.cs" />
@@ -164,6 +164,7 @@
     <Compile Include="Assets\LeanTween\Testing\Testing246.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
     <Compile Include="Assets\TotalJSON\Internal\StringPointer.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\TotalJSON\Internal\InternalTools.cs" />
@@ -172,10 +173,33 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\LeanTween\ReadMe.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\LeanTween\License.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Tabsil\Mineral\Data\data.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1306,10 +1330,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1320,6 +1340,10 @@
     </Reference>
     <Reference Include="Unity.Multiplayer.Center.Common">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Center.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">

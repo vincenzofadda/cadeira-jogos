@@ -75,9 +75,13 @@ public class WaveManager : MonoBehaviour
 
   private void StartWaveTransition()
   {
+    isTimerOn = false;
     DefeatAllEnemies();
     currentWaveIndex++;
-    StartWave(currentWaveIndex);
+    if (currentWaveIndex >= waves.Length)
+      Debug.Log("Waves completed !!!");
+    else
+      StartWave(currentWaveIndex);
   }
 
   private void DefeatAllEnemies()
