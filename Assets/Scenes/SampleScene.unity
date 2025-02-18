@@ -521,10 +521,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6193329146860693368, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 88454827194529214, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
 --- !u!4 &183257624 stripped
 Transform:
@@ -1067,6 +1074,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
+  damage: 5
   aimLerp: 12
 --- !u!4 &406160661
 Transform:
@@ -6968,6 +6976,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff204279805a0f41b88443459af494d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  healthText: {fileID: 0}
   renderer: {fileID: 50337186}
   spawnIndicator: {fileID: 1666991170}
   deathParticles: {fileID: 1105321317}
@@ -13344,10 +13354,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6193329146860693368, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 88454827194529214, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
 --- !u!1001 &1620376391
 PrefabInstance:
@@ -13401,10 +13418,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6193329146860693368, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 88454827194529214, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
 --- !u!1 &1629952896
 GameObject:
@@ -14222,6 +14246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff204279805a0f41b88443459af494d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  healthText: {fileID: 0}
   renderer: {fileID: 1327036789}
   spawnIndicator: {fileID: 131881428}
   deathParticles: {fileID: 788731885}
