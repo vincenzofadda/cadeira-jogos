@@ -12,6 +12,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private LayerMask enemyMask;
 
+    [Header("Attack")]
+    [SerializeField] private int damage;
+
     [Header("Animations")]
     [SerializeField] private float aimLerp;
 
@@ -48,7 +51,7 @@ public class Weapon : MonoBehaviour
 
       for (int i = 0; i < enemies.Length; i++)
       {
-        Destroy(enemies[i].gameObject);
+        enemies[i].GetComponent<Enemy>().TakeDamage(damage);
       }
     }
 
