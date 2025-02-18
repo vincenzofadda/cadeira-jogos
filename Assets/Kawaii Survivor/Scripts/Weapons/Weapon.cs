@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+
+    [Header("Settings")]
+    [SerializeField] private float range;
+    [SerializeField] private LayerMask enemyMask;
+
+    [Header("Animations")]
+    [SerializeField] private float aimLerp;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,15 +19,37 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AutoAim();
+    }
 
+    private void AutoAim()
+    {
+        Enemy closestEnemy = GetClosestEnemy();
+
+        Vector2 targetUpVector = Vector3.up;
+
+        if(closestEnemy != null)
+            targetUpVector = (closestEnemy.transform.position - transform.position).normalized;
+
+        transform.up = Vector3.Lerp(transform.up, targetUpVector, Time.deltaTime * aimLerp);
+
+    }
+
+    private Enemy GetClosestEnemy()
+    {
         Enemy closestEnemy = null;
-        Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, range, enemyMask);
 
-        float minDistance = 5000;
+        if(enemies.Length <= 0)
+        {
+          return null;
+        }
+
+        float minDistance = range;
 
         for (int i = 0; i < enemies.Length; i++)
         {
-            Enemy enemyChecked = enemies[i];
+            Enemy enemyChecked = enemies[i].GetComponent<Enemy>();;
 
             float distanceToEnemy = Vector2.Distance(transform.position, enemyChecked.transform.position);
 
@@ -30,12 +60,13 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        if(closestEnemy == null)
-        {
-          transform.up = Vector3.up;
-          return;
-        }
+        return closestEnemy;
+    }
 
-        transform.up = (closestEnemy.transform.position - transform.position).normalized;
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
