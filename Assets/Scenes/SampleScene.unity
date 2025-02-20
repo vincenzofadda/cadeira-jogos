@@ -1070,11 +1070,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitDetectionTransform: {fileID: 490991988}
   hitDetectionRadius: 0.3
-  range: 2
+  range: 10
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
   damage: 5
+  animator: {fileID: 406160662}
   aimLerp: 12
 --- !u!4 &406160661
 Transform:
