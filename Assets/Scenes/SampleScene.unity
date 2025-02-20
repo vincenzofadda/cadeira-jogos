@@ -1075,6 +1075,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 5
+  attackDelay: 0
   animator: {fileID: 406160662}
   aimLerp: 12
 --- !u!4 &406160661
@@ -14805,7 +14806,7 @@ GameObject:
   - component: {fileID: 1945184238}
   - component: {fileID: 1945184231}
   - component: {fileID: 1945184235}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14848,7 +14849,7 @@ Transform:
   m_GameObject: {fileID: 1945184230}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.31, y: 3.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
