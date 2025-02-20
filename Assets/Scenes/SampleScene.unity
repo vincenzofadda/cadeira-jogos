@@ -1075,7 +1075,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 5
-  attackDelay: 0
+  attackDelay: 0.4
   animator: {fileID: 406160662}
   aimLerp: 12
 --- !u!4 &406160661
