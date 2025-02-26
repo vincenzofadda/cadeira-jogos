@@ -6,11 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 10f;
     private Rigidbody2D rig;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Animator animator; 
+
     void Start()
     {
-      rig = GetComponent<Rigidbody2D>();
-      rig.linearVelocity = Vector2.right;
+        rig = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>(); 
     }
 
     private void FixedUpdate()
@@ -36,5 +37,15 @@ public class PlayerController : MonoBehaviour
         }
 
         rig.linearVelocity = new Vector2(moveX, moveY);
+
+        // Define animação de andar
+        bool isWalking = moveX != 0 || moveY != 0;
+        animator.SetBool("isWalking", isWalking);
+
+        // Ajusta a direção do sprite (Flip)
+        if (moveX > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (moveX < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 }
