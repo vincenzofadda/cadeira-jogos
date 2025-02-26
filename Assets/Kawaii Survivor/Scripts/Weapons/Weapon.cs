@@ -21,16 +21,16 @@ public class Weapon : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
 
     [Header("Attack")]
-    [SerializeField] private int damage;
-    [SerializeField] private float attackDelay;
+    [SerializeField] protected int damage;
+    [SerializeField] protected float attackDelay;
     [SerializeField] private Animator animator;
 
-    private float attackTimer;
+    protected float attackTimer;
     private List<Enemy> damagedEnemies = new List<Enemy>();
 
 
     [Header("Animations")]
-    [SerializeField] private float aimLerp;
+    [SerializeField] protected float aimLerp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,8 +61,8 @@ public class Weapon : MonoBehaviour
 
         if(closestEnemy != null)
         {
-          ManageAttack();
           targetUpVector = (closestEnemy.transform.position - transform.position).normalized;
+          ManageAttack();
         }
 
         transform.up = Vector3.Lerp(transform.up, targetUpVector, Time.deltaTime * aimLerp);
@@ -126,7 +126,7 @@ public class Weapon : MonoBehaviour
       }
     }
 
-    private Enemy GetClosestEnemy()
+    protected Enemy GetClosestEnemy()
     {
         Enemy closestEnemy = null;
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, range, enemyMask);
