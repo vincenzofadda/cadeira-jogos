@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+  private WaveManager waveManager;
+  
   [Header(" Settings ")]
   [SerializeField] private int maxHealth;
   private int health;
@@ -15,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
   {
     health = maxHealth;
     OnHealthChanged?.Invoke(health, maxHealth);
+    waveManager = FindObjectOfType<WaveManager>();
   }
 
   public void TakeDamage(int damage)
@@ -33,5 +36,8 @@ public class PlayerHealth : MonoBehaviour
   private void PassAway()
   {
     Debug.Log("Dead");
+    //GameManager.instance.SetGameState(GameState.MENU);
+    //waveManager.DefeatAllEnemies();
+    //health = maxHealth;
   }
 }

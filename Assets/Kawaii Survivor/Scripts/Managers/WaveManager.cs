@@ -107,7 +107,7 @@ public class WaveManager : MonoBehaviour, IGameStateListener
     StartWave(currentWaveIndex);
   }
 
-  private void DefeatAllEnemies()
+  public void DefeatAllEnemies()
   {
     transform.Clear();
   }
@@ -132,6 +132,7 @@ public class WaveManager : MonoBehaviour, IGameStateListener
       case GameState.GAME:
         StartNextWave();
         break;
+     
     }
   }
 }

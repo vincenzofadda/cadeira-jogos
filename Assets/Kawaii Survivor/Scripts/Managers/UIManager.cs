@@ -22,8 +22,18 @@ public class UIManager : MonoBehaviour, IGameStateListener
 
     public void GameStateChangedCallback(GameState gameState)
     {
-        bool isGameActive = (gameState == GameState.GAME);
-        menuPanel.SetActive(!isGameActive);
-        gamePanel.SetActive(isGameActive);
+        switch(gameState)
+        {
+            case GameState.GAME:
+                menuPanel.SetActive(false);
+                gamePanel.SetActive(true);
+                break;
+            case GameState.MENU:
+                menuPanel.SetActive(true);
+                gamePanel.SetActive(false);
+                break;
+            
+        }
+
     }
 }

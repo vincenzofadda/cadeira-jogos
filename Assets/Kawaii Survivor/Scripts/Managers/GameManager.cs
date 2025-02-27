@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
     {
         SetGameState(GameState.GAME);
     }
+
+    public void MenuGame()
+    {
+        
+    }
     // Update is called once per frame
 
     public void SetGameState(GameState gameState)
