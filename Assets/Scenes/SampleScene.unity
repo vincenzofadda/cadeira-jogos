@@ -1494,13 +1494,13 @@ MonoBehaviour:
   waves:
   - name: Wave 1
     segments:
-    - tStartEnd: {x: 0, y: 100}
-      spawnFrequency: 8
+    - tStartEnd: {x: 0, y: 48.26573}
+      spawnFrequency: 4
       prefab: {fileID: 5115462511270099395, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
   - name: Wave 2
     segments:
-    - tStartEnd: {x: 0, y: 100}
-      spawnFrequency: 8
+    - tStartEnd: {x: 0, y: 58.870968}
+      spawnFrequency: 6
       prefab: {fileID: 5115462511270099395, guid: 8118985f6b345c647ab90599620ba9b5, type: 3}
 --- !u!114 &691778170
 MonoBehaviour:

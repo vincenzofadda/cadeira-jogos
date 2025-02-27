@@ -5,7 +5,7 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
-
+    private WaveManager waveManager;
     public static GameManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        waveManager = FindObjectOfType<WaveManager>();
         Application.targetFrameRate = 60;
         SetGameState(GameState.MENU);
     }
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void WaveCompleteCallback()
     {
-        Debug.Log("transiacoaasdoasa");
+        waveManager.StartNextWave();
     }
 }
 
