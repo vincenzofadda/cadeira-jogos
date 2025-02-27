@@ -83,7 +83,6 @@
     <Compile Include="Assets\LeanTween\Testing\TestingSceneSwitching.cs" />
     <Compile Include="Assets\TotalJSON\Examples\ParseAndHandleJSON.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
-    <Compile Include="Assets\Mobile Joystick\Scripts\MobileJoystick.cs" />
     <Compile Include="Assets\Tabsil\Scripts\Extensions\VectorExtensions.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Tabsil\Sijil\Scripts\Core\IWantToBeSaved.cs" />
