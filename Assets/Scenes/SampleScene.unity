@@ -1502,6 +1502,11 @@ MonoBehaviour:
     - tStartEnd: {x: 0, y: 58.870968}
       spawnFrequency: 6
       prefab: {fileID: 5115462511270099395, guid: 8118985f6b345c647ab90599620ba9b5, type: 3}
+  - name: Wave 3
+    segments:
+    - tStartEnd: {x: 0, y: 58.870968}
+      spawnFrequency: 6
+      prefab: {fileID: 5115462511270099395, guid: 69800b1daf2d4d940a9a8e7743802d74, type: 3}
 --- !u!114 &691778170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3512,7 +3517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Wave 1 / 2
+  m_text: Wave 1 / 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96dbcb2895353a24da88e6ddd7b0b8f2, type: 2}
   m_sharedMaterial: {fileID: -1051536056453776857, guid: 96dbcb2895353a24da88e6ddd7b0b8f2, type: 2}
