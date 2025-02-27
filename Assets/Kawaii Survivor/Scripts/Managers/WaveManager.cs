@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+
+[RequireComponent(typeof(WaveManagerUI))]
 public class WaveManager : MonoBehaviour
 {
   [Header(" Elements ")]
   [SerializeField]
   private Player player;
+  private WaveManagerUI ui;
   [Header(" Settings ")]
   [SerializeField] private float waveDuration;
   private float timer;
@@ -16,6 +19,11 @@ public class WaveManager : MonoBehaviour
   [Header(" Waves ")]
   [SerializeField] private Wave[] waves;
   private List<float> localCounters = new List<float>();
+
+  void Awake()
+  {
+    ui = GetComponent<WaveManagerUI>();
+  }
 
   void Start()
   {
@@ -28,13 +36,19 @@ public class WaveManager : MonoBehaviour
       return;
 
     if (timer < waveDuration)
+    {
       ManageCurrentWave();
+      string timerString = ((int)(waveDuration - timer)).ToString();
+      ui.UpdateTimerText(timerString);
+    }
     else
       StartWaveTransition();
   }
 
   private void StartWave(int waveIndex)
   {
+    ui.UpdateWaveText("Wave " + (currentWaveIndex+1) + " / " + waves.Length);
+
     localCounters.Clear();
     foreach (WaveSegment segment in waves[waveIndex].segments)
       localCounters.Add(1);
@@ -79,7 +93,11 @@ public class WaveManager : MonoBehaviour
     DefeatAllEnemies();
     currentWaveIndex++;
     if (currentWaveIndex >= waves.Length)
+    {
       Debug.Log("Waves completed !!!");
+      ui.UpdateTimerText("");
+      ui.UpdateWaveText("Passou de nível!");
+    }
     else
       StartWave(currentWaveIndex);
   }

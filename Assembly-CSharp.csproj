@@ -111,6 +111,7 @@
     <Compile Include="Assets\TotalJSON\Scripts\JNumber.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JString.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Managers\WaveManagerUI.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Settings\DeserializeSettings.cs" />
