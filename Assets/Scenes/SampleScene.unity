@@ -353,6 +353,7 @@ Transform:
   m_Children:
   - {fileID: 640291763}
   - {fileID: 691778168}
+  - {fileID: 1332630805}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204434332
@@ -1826,8 +1827,8 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  damage: 1
-  attackDelay: 0.3
+  damage: 3
+  attackDelay: 0.1
   animator: {fileID: 725784793}
   aimLerp: 12
   bulletPrefab: {fileID: 6542970276229087965, guid: aefc58a6396ce424da2f279b2cdc4c8b, type: 3}
@@ -3162,6 +3163,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1317446237}
+--- !u!1 &1332630804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332630805}
+  - component: {fileID: 1332630806}
+  m_Layer: 0
+  m_Name: Drop Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1332630805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332630804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138351083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1332630806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332630804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9350065b0a3004984790f933e26747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cashPrefab: {fileID: 9052118728580069374, guid: 375070ba7f3cff149a0607830c5f25f2, type: 3}
 --- !u!1 &1365168325
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,6 +4705,7 @@ GameObject:
   - component: {fileID: 1945184234}
   - component: {fileID: 1945184237}
   - component: {fileID: 1945184238}
+  - component: {fileID: 1945184239}
   - component: {fileID: 1945184231}
   - component: {fileID: 1945184235}
   m_Layer: 7
@@ -4803,6 +4850,19 @@ MonoBehaviour:
   healthSlider: {fileID: 1839243874}
   healthText: {fileID: 1835769065}
   playerHealth: {fileID: 1945184237}
+--- !u!114 &1945184239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945184230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b91f63d51ebee48a07b93dde352ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCollider: {fileID: 1945184235}
 --- !u!1 &2063380271
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System;
 using TMPro;
 
 [RequireComponent(typeof(EnemyMovement))]
@@ -31,6 +34,9 @@ public class Enemy : MonoBehaviour
   [SerializeField] private float playerDetectionRadius;
   private float attackDelay;
   private float attackTimer;
+
+  [Header("Actions")]
+  public static Action<Vector2> onDeath;
 
   [Header("DEBUG")]
   [SerializeField] private bool gizmos;
@@ -128,6 +134,8 @@ public class Enemy : MonoBehaviour
 
   private void Death()
   {
+    onDeath?.Invoke(transform.position);
+
     deathParticles.transform.SetParent(null);
     deathParticles.Play();
     Destroy(gameObject);
