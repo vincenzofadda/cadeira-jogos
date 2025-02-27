@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
   [Header("Spawn Sequence Related")]
   [SerializeField] private SpriteRenderer renderer;
   [SerializeField] private SpriteRenderer spawnIndicator;
+  [SerializeField] protected Collider2D collider;
   private bool hasSpawned;
 
   [Header("Effects")]
@@ -57,6 +58,7 @@ public class Enemy : MonoBehaviour
 
   private void startSpawnSequence()
   {
+    collider.enabled = false;
     SetRenderersVisibility(false);
 
 
@@ -69,6 +71,8 @@ public class Enemy : MonoBehaviour
   {
     SetRenderersVisibility(true);
     hasSpawned = true;
+
+    collider.enabled = true;
 
     movement.storePlayer(player);
   }

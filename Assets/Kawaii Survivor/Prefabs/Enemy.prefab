@@ -5121,6 +5121,7 @@ MonoBehaviour:
   healthText: {fileID: 113975539227398932}
   renderer: {fileID: 3696940587918040902}
   spawnIndicator: {fileID: 5892704707378338357}
+  collider: {fileID: 2526143510951345837}
   deathParticles: {fileID: 6045277869431851402}
   damage: 1
   attackFrequency: 1
