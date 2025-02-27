@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
 public class PlayerDetection : MonoBehaviour
 {
 
@@ -15,7 +16,7 @@ public class PlayerDetection : MonoBehaviour
         }
         if(collider.TryGetComponent(out Cash cash))
         {
-            cash.Collect(transform);
+            cash.Collect(GetComponent<Player>());
         }
     }
 }

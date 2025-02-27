@@ -18,29 +18,30 @@ public class Cash : MonoBehaviour
         
     }
 
-    public void Collect(Transform playerTransform)
+    public void Collect(Player playerTransform)
     {
         if(collected)
         {
             return;
         }
 
-        Debug.Log("Collect chamado com playerTransform: " + playerTransform.position);
         collected = true;
 
         StartCoroutine(MoveTowardsPlayer(playerTransform));
 
 
     }
-    IEnumerator MoveTowardsPlayer(Transform playerTransform)
+    IEnumerator MoveTowardsPlayer(Player player)
     {
 
         float timer = 0;
         Vector2 initialPosition = transform.position;
+        
 
         while(timer < 1)
         {
-            transform.position = Vector2.Lerp(initialPosition, playerTransform.position, timer);
+            Vector2 targetPosition = player.GetCenter();
+            transform.position = Vector2.Lerp(initialPosition, targetPosition, timer);
             timer += Time.deltaTime;
             yield return null;
         }
