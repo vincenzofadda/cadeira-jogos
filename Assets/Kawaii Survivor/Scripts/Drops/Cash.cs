@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Cash : MonoBehaviour
 {
+    public static Action<Cash> onCollected;
 
     private bool collected;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,6 +53,7 @@ public class Cash : MonoBehaviour
 
     private void Collected()
     {
+        onCollected?.Invoke(this);
         gameObject.SetActive(false);
     }
 }

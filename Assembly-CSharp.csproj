@@ -96,6 +96,7 @@
     <Compile Include="Assets\Tabsil\Sijil\Scripts\Core\Sijil.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JValueNullException.cs" />
     <Compile Include="Assets\LeanTween\Testing\FollowingTests.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Player\PlayerLevel.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\Weapons\Bullet.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingIssue2.cs" />
