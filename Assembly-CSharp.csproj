@@ -59,13 +59,14 @@
     <UnityVersion>6000.0.36f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\VINCENZO\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\User\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Kawaii Survivor\Scripts\Weapons\MeleeWeapon.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\UI\UpgradeContainer.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingDescr.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JSON.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\Mobile Joystick\Scripts\MobileJoystick.cs" />
     <Compile Include="Assets\Tabsil\Scripts\Extensions\VectorExtensions.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Managers\WaveTransitionManager.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Tabsil\Sijil\Scripts\Core\IWantToBeSaved.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\SerializeException.cs" />
@@ -691,14 +693,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
