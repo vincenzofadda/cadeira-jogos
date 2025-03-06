@@ -4,7 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 
 [RequireComponent(typeof(WaveManagerUI))]
-public class WaveManager : MonoBehaviour
+public class WaveManager : MonoBehaviour, IGameStateListener
 {
   [Header(" Elements ")]
   [SerializeField]
@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
 
   void Start()
   {
-    StartWave(0);
+
   }
 
   void Update()
@@ -94,12 +94,19 @@ public class WaveManager : MonoBehaviour
     currentWaveIndex++;
     if (currentWaveIndex >= waves.Length)
     {
-      Debug.Log("Waves completed !!!");
+      Debug.Log("Finalixou o jogo!");
       ui.UpdateTimerText("");
-      ui.UpdateWaveText("Passou de nível!");
+      ui.UpdateWaveText("Finalizou o jogo!");
+
+      GameManager.instance.SetGameState(GameState.STAGECOMPLETE);
     }
     else
-      StartWave(currentWaveIndex);
+      GameManager.instance.WaveCompletedCallback();
+  }
+
+  private void StartNextWave()
+  {
+    StartWave(currentWaveIndex);
   }
 
   private void DefeatAllEnemies()
@@ -119,6 +126,20 @@ public class WaveManager : MonoBehaviour
 
     return targetPosition;
   }
+
+   public void GameStateChangedCallback(GameState gameState)
+   {
+      switch(gameState)
+    {
+      case GameState.GAME:
+        StartNextWave();
+        break;
+      case GameState.GAMEOVER:
+        isTimerOn = false;
+        DefeatAllEnemies();
+        break;
+    }
+   }
 }
 
 [System.Serializable]

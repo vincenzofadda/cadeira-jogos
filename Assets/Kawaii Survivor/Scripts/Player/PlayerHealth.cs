@@ -32,6 +32,6 @@ public class PlayerHealth : MonoBehaviour
 
   private void PassAway()
   {
-    Debug.Log("Dead");
+    GameManager.instance.SetGameState(GameState.GAMEOVER);
   }
 }

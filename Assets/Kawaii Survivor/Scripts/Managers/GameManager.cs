@@ -1,16 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public static GameManager instance;
+  // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+  void Awake()
+  {
+    if(instance == null)
+    {
+      instance = this;
+    }
+    else
+    {
+      Destroy(gameObject);
+    }
+  }
+  void Start()
     {
         Application.targetFrameRate = 60;
+
+        SetGameState(GameState.MENU);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+      SetGameState(GameState.GAME);
     }
+
+    public void StartWeaponSelection()
+    {
+      SetGameState(GameState.WEAPONSELECTION);
+    }
+
+    public void StartShop()
+    {
+      SetGameState(GameState.SHOP);
+    }
+
+    public void SetGameState(GameState gameState)
+    {
+        IEnumerable<IGameStateListener> gameStateListeners = 
+        FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+        .OfType<IGameStateListener>();
+    
+        foreach(IGameStateListener gameStateListener in gameStateListeners)
+            gameStateListener.GameStateChangedCallback(gameState);
+
+    }
+
+    public void WaveCompletedCallback()
+    {
+      if(Player.instance.HasLeveledUp())
+      {
+        SetGameState(GameState.WAVETRANSITION);
+      }
+      else
+      {
+        SetGameState(GameState.SHOP);
+      }
+    }
+
+    public void ManageGameover()
+    {
+      SceneManager.LoadScene(0);
+    }
+
+}
+public interface IGameStateListener
+{
+  void GameStateChangedCallback(GameState gameState);
 }

@@ -47,7 +47,7 @@ public class Cash : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("coletou esta merda");
+        //Debug.Log("coletou esta merda");
         Collected();
     }
 

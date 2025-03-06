@@ -1,17 +1,30 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(PlayerHealth), typeof(PlayerLevel))]
 public class Player : MonoBehaviour
 {
 
+  public static Player instance;
+
   [Header(" Components ")]
   private PlayerHealth playerHealth;
+  private PlayerLevel playerLevel;
 
   [SerializeField] private CircleCollider2D collider;
 
   private void Awake()
   {
     playerHealth = GetComponent<PlayerHealth>();
+    playerLevel = GetComponent<PlayerLevel>();
+
+    if(instance == null)
+    {
+      instance = this;
+    }
+    else
+    {
+      Destroy(gameObject);
+    }
   }
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,7 +45,12 @@ public class Player : MonoBehaviour
   }
 
   public Vector2 GetCenter()
-    {
-        return (Vector2)transform.position + GetComponent<CircleCollider2D>().offset;
-    }
+  {
+      return (Vector2)transform.position + GetComponent<CircleCollider2D>().offset;
+  }
+
+  public bool HasLeveledUp()
+  {
+    return playerLevel.HasLeveledUp();
+  }
 }
