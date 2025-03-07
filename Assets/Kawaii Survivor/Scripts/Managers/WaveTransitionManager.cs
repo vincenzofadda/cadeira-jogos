@@ -10,7 +10,8 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
 {
 
     [Header("Elements")]
-    [SerializeField] private UpgradeContainers[] upgradeContainers;
+    [SerializeField] private PlayerStatsManager playerStatsManager;
+    [SerializeField] private UpgradeContainer[] upgradeContainers;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,11 +45,52 @@ public class WaveTransitionManager : MonoBehaviour, IGameStateListener
 
             string randomStatString = Enums.FormatStatName(stat);
 
-            upgradeContainers[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = randomStatString;
+            string buttonString;
+            Action action = GetActionToPerform(stat, out buttonString);
 
-            upgradeContainers[i].onClick.RemoveAllListeners();
-            upgradeContainers[i].onClick.AddListener(() => Debug.Log(randomStatString));
+            upgradeContainers[i].Configure(null, randomStatString, buttonString);
 
+            upgradeContainers[i].Button.onClick.RemoveAllListeners();
+            upgradeContainers[i].Button.onClick.AddListener(() => action?.Invoke());
+
+            upgradeContainers[i].Button.onClick.AddListener(() => BonusSelectedCallback());
         }
+   }
+
+   private void BonusSelectedCallback()
+   {
+    GameManager.instance.WaveCompletedCallback();
+   }
+
+   private Action GetActionToPerform(Stat stat, out string buttonString)
+   {
+
+    buttonString = "";
+    float value;
+    value = Random.Range(1, 10);
+    buttonString = "+" + value.ToString() + "%";
+
+    switch(stat)
+    {
+      case Stat.Attack:
+        value = Random.Range(1, 10);
+
+        break;
+
+      case Stat.AttackSpeed:
+        value = Random.Range(5, 20);
+
+        break;
+      
+      case Stat.MaxHealth:
+        value = Random.Range(1, 15);
+        buttonString = "+" + value;
+        break;
+
+      default:
+        return () => Debug.Log("Stat invalido");
+    }
+
+    return () => playerStatsManager.AddPlayerStat(stat, value);
    }
 }

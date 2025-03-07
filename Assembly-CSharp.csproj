@@ -59,7 +59,7 @@
     <UnityVersion>6000.0.36f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\User\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\VINCENZO\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Assets\Kawaii Survivor\Scripts\Weapons\MeleeWeapon.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\UI\UpgradeContainer.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Managers\PlayerStatsManager.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingDescr.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\JSON.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\TotalJSON\Scripts\Settings\DeserializeSettings.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
     <Compile Include="Assets\TotalJSON\Examples\CreateAndModifyJSON.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Player\IPlayerStatsDepedency.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingMaxTweens.cs" />
     <Compile Include="Assets\Kawaii Survivor\Scripts\Weapons\RangeWeapon.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
@@ -183,6 +185,7 @@
     <Compile Include="Assets\TotalJSON\Internal\InternalTools.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Exceptions\JSONKeyAlreadyExistsException.cs" />
     <Compile Include="Assets\TotalJSON\Scripts\Settings\CreateStringSettings.cs" />
+    <Compile Include="Assets\Kawaii Survivor\Scripts\Scriptable Objects\CharacterDataSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -693,6 +696,14 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
