@@ -3072,16 +3072,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1945184236}
-  waveDuration: 1
+  waveDuration: 15
   waves:
   - name: Wave 1
     segments:
-    - tStartEnd: {x: 0, y: 100}
+    - tStartEnd: {x: 0, y: 46.991405}
       spawnFrequency: 8
       prefab: {fileID: 5115462511270099395, guid: f94e97b2e04ec5b469fa19a1df12f9bc, type: 3}
   - name: Wave 2
     segments:
-    - tStartEnd: {x: 0, y: 100}
+    - tStartEnd: {x: 0, y: 58.452724}
       spawnFrequency: 8
       prefab: {fileID: 5115462511270099395, guid: 8118985f6b345c647ab90599620ba9b5, type: 3}
 --- !u!114 &691778170
@@ -8431,7 +8431,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1839243874}
   healthText: {fileID: 1835769065}
   playerHealth: {fileID: 1945184237}
-  baseMaxHealth: 5
+  baseMaxHealth: 10
 --- !u!114 &1945184239
 MonoBehaviour:
   m_ObjectHideFlags: 0
